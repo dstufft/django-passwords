@@ -22,13 +22,8 @@ Or manually by downloading a tarball and typing::
 Settings
 --------
 
-django-postmark adds 5 optional settings
+django-passwords adds 6 optional settings
 
-Required:
-    Specifies the api key for your postmark server.::
-
-        POSTMARK_API_KEY = 'POSTMARK_API_TEST'
-    
 Optional:
     Specifies minimum length for passwords::
 
