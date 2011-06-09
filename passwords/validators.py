@@ -53,6 +53,7 @@ class BaseSimilarityValidator(object):
         self.haystacks = haystacks if haystacks else []
 
     def fuzzy_substring(self, needle, haystack):
+        needle, haystack = needle.lower(), haystack.lower()
         m, n = len(needle), len(haystack)
 
         if m == 1:
