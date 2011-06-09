@@ -135,10 +135,6 @@ class BaseSimilarityValidator(object):
                     self.message % {"haystacks": ", ".join(self.haystacks)},
                     code=self.code)
 
-
-class InformationValidator(object):
-    pass
-
 class DictionaryValidator(BaseSimilarityValidator):
     message = _("Based on a dictionary word.")
     code = "dictionary_word"
