@@ -2,6 +2,7 @@ from __future__ import division
 
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import smart_unicode
 from django.conf import settings
 
 COMMON_SEQUENCES = [
@@ -83,12 +84,26 @@ class BaseSimilarityValidator(object):
 class InformationValidator(object):
     pass
 
-class DictionaryValidator(object):
-    pass
+class DictionaryValidator(BaseSimilarityValidator):
+    message = _("Based on a dictionary word.")
+    code = "dictionary_word"
+
+    def __init__(self, words=None, dictionary=None):
+        haystacks = []
+        if dictionary:
+            with open(dictionary) as dictionary:
+                haystacks.extend(
+                    [smart_unicode(x.strip()) for x in dictionary.readlines()]
+                )
+        if words:
+            haystacks.extend(words)
+        super(DictionaryValidator, self).__init__(haystacks=haystacks)
+
 
 class CommonSequenceValidator(BaseSimilarityValidator):
     message = _("Based on a common sequence of characters")
     code = "common_sequence"
         
 validate_length = LengthValidator()
+dictionary_words = DictionaryValidator(dictionary=PASSWORD_DICTIONARY)
 common_sequences = CommonSequenceValidator(PASSWORD_COMMON_SEQUENCES)
