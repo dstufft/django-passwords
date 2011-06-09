@@ -30,12 +30,12 @@ class LengthValidator(object):
     message = _("Invalid Length (%s)")
     code = "length"
 
-    def __init__(self, min_length=PASSWORD_MIN_LENGTH, max_length=PASSWORD_MAX_LENGTH):
+    def __init__(self, min_length=None, max_length=None):
         self.min_length = min_length
         self.max_length = max_length
 
     def __call__(self, value):
-        if len(value) < self.min_length:
+        if self.min_length and len(value) < self.min_length:
             raise ValidationError(
                 self.message % _("Must be %s characters or more") % self.min_length,
                 code=self.code)
@@ -155,7 +155,7 @@ class CommonSequenceValidator(BaseSimilarityValidator):
     message = _("Based on a common sequence of characters")
     code = "common_sequence"
         
-validate_length = LengthValidator()
+validate_length = LengthValidator(PASSWORD_MIN_LENGTH, PASSWORD_MAX_LENGTH)
 complexity = ComplexityValidator(PASSWORD_COMPLEXITY)
 dictionary_words = DictionaryValidator(dictionary=PASSWORD_DICTIONARY)
 common_sequences = CommonSequenceValidator(PASSWORD_COMMON_SEQUENCES)
