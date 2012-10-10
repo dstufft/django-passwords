@@ -55,7 +55,8 @@ class ComplexityValidator(object):
         if self.complexities is None:
             return
 
-        uppercase, lowercase, digits, non_ascii, punctuation = set(), set(), set(), set(), set()
+        uppercase, lowercase, digits = set(), set(), set()
+        non_ascii, punctuation = set(), set()
 
         for character in value:
             if ord(character) >= 128:
@@ -73,30 +74,35 @@ class ComplexityValidator(object):
 
         words = set(value.split())
 
+        errors = []
         if len(uppercase) < self.complexities.get("UPPER", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(UPPER)s or more uppercase characters") % self.complexities,
-                code=self.code)
-        elif len(lowercase) < self.complexities.get("LOWER", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(LOWER)s or more lowercase characters") % self.complexities,
-                code=self.code)
-        elif len(digits) < self.complexities.get("DIGITS", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(DIGITS)s or more digits") % self.complexities,
-                code=self.code)
-        elif len(punctuation) < self.complexities.get("PUNCTUATION", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(PUNCTUATION)s or more punctuation character") % self.complexities,
-                code=self.code)
-        elif len(non_ascii) < self.complexities.get("NON ASCII", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(NON ASCII)s or more non ascii characters") % self.complexities,
-                code=self.code)
-        elif len(words) < self.complexities.get("WORDS", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(WORDS)s or more unique words") % self.complexities,
-                code=self.code)
+            errors.append(
+                _("must contain %(UPPER)s or more uppercase characters") %
+                self.complexities)
+        if len(lowercase) < self.complexities.get("LOWER", 0):
+            errors.append(
+                _("must contain %(LOWER)s or more lowercase characters") %
+                self.complexities)
+        if len(digits) < self.complexities.get("DIGITS", 0):
+            errors.append(
+                _("must contain %(DIGITS)s or more digits") %
+                self.complexities)
+        if len(punctuation) < self.complexities.get("PUNCTUATION", 0):
+            errors.append(
+                _("must contain %(PUNCTUATION)s or more punctuation characters"
+                  ) % self.complexities)
+        if len(non_ascii) < self.complexities.get("NON ASCII", 0):
+            errors.append(
+                _("must contain %(NON ASCII)s or more non ascii characters") %
+                self.complexities)
+        if len(words) < self.complexities.get("WORDS", 0):
+            errors.append(
+                _("must contain %(WORDS)s or more unique words") %
+                self.complexities)
+
+        if errors:
+            raise ValidationError(self.message % (u', '.join(errors),),
+                                  code=self.code)
 
 
 class BaseSimilarityValidator(object):
