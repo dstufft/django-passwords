@@ -1,5 +1,6 @@
 from __future__ import division
 import string
+import re
 
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
@@ -55,12 +56,10 @@ class ComplexityValidator(object):
         if self.complexities is None:
             return
 
-        uppercase, lowercase, digits, non_ascii, punctuation = set(), set(), set(), set(), set()
+        uppercase, lowercase, digits, special, punctuation = set(), set(), set(), set(), set()
 
         for character in value:
-            if ord(character) >= 128:
-                non_ascii.add(character)
-            elif character.isupper():
+            if character.isupper():
                 uppercase.add(character)
             elif character.islower():
                 lowercase.add(character)
@@ -68,30 +67,30 @@ class ComplexityValidator(object):
                 digits.add(character)
             elif character in string.punctuation:
                 punctuation.add(character)
-            else:
-                non_ascii.add(character)
+            elif not character.isspace():
+                special.add(character)
 
-        words = set(value.split())
+        words = set(re.findall(r'\b\w+', value, re.UNICODE))
 
         if len(uppercase) < self.complexities.get("UPPER", 0):
             raise ValidationError(
-                self.message % _("Must contain %(UPPER)s or more uppercase characters") % self.complexities,
+                self.message % _("Must contain %(UPPER)s or more unique uppercase characters") % self.complexities,
                 code=self.code)
         elif len(lowercase) < self.complexities.get("LOWER", 0):
             raise ValidationError(
-                self.message % _("Must contain %(LOWER)s or more lowercase characters") % self.complexities,
+                self.message % _("Must contain %(LOWER)s or more unique lowercase characters") % self.complexities,
                 code=self.code)
         elif len(digits) < self.complexities.get("DIGITS", 0):
             raise ValidationError(
-                self.message % _("Must contain %(DIGITS)s or more digits") % self.complexities,
+                self.message % _("Must contain %(DIGITS)s or more unique digits") % self.complexities,
                 code=self.code)
         elif len(punctuation) < self.complexities.get("PUNCTUATION", 0):
             raise ValidationError(
-                self.message % _("Must contain %(PUNCTUATION)s or more punctuation character") % self.complexities,
+                self.message % _("Must contain %(PUNCTUATION)s or more unique punctuation characters") % self.complexities,
                 code=self.code)
-        elif len(non_ascii) < self.complexities.get("NON ASCII", 0):
+        elif len(special) < self.complexities.get("SPECIAL", 0):
             raise ValidationError(
-                self.message % _("Must contain %(NON ASCII)s or more non ascii characters") % self.complexities,
+                self.message % _("Must contain %(SPECIAL)s or more unique special characters") % self.complexities,
                 code=self.code)
         elif len(words) < self.complexities.get("WORDS", 0):
             raise ValidationError(
@@ -136,7 +135,7 @@ class BaseSimilarityValidator(object):
                     code=self.code)
 
 class DictionaryValidator(BaseSimilarityValidator):
-    message = _("Based on a dictionary word.")
+    message = _("Based on a dictionary word")
     code = "dictionary_word"
 
     def __init__(self, words=None, dictionary=None):
