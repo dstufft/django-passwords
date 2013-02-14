@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-passwords\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-14 15:27+0100\n"
+"PO-Revision-Date: 2013-02-14 15:24+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: validators.py:30
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "Ungültige Länge (%s)"
+
+#: validators.py:40
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "Es müssen %s oder mehr Buchstaben enthalten sein"
+
+#: validators.py:44
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "Es müssen %s oder weniger Buchstaben enthalten sein"
+
+#: validators.py:48
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "Höhere Komplexität erforderlich (%s)"
+
+#: validators.py:78
+#, python-format
+msgid "Must contain %(UPPER)s or more uppercase characters"
+msgstr "Es müssen mindestens %(UPPER)s Großbuchstaben vorhanden sein"
+
+#: validators.py:82
+#, python-format
+msgid "Must contain %(LOWER)s or more lowercase characters"
+msgstr "Es müssen mindestens %(LOWER)s Kleinbuchstaben vorhanden sein"
+
+#: validators.py:86
+#, python-format
+msgid "Must contain %(DIGITS)s or more digits"
+msgstr "Es müssen mindestens %(DIGITS)s Zahlen vorhanden sein"
+
+#: validators.py:90
+#, python-format
+msgid "Must contain %(PUNCTUATION)s or more punctuation character"
+msgstr "Es müssen mindestens %(PUNCTUATION)s Satzzeichen enthalten sein"
+
+#: validators.py:94
+#, python-format
+msgid "Must contain %(NON ASCII)s or more non ascii characters"
+msgstr "Es müssen mindestens %(NON ASCII)s Sonderzeichen enthalten sein"
+
+#: validators.py:98
+#, python-format
+msgid "Must contain %(WORDS)s or more unique words"
+msgstr "Es müssen mindestens %(WORDS)s eindeutige Wörter enthalten sein"
+
+#: validators.py:103
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "Zu ähnlich zu [%(haystacks)s]"
+
+#: validators.py:139
+msgid "Based on a dictionary word."
+msgstr "Basiert auf einem Wört im Wörterbuch."
+
+#: validators.py:155
+msgid "Based on a common sequence of characters"
+msgstr "Basiert auf einer verbreiteten Sequenz von Buchstaben"
