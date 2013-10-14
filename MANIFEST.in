@@ -1,2 +1,2 @@
 include README.rst
-recursive-include locale *
+recursive-include passwords/locale *
