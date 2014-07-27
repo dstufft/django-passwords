@@ -83,11 +83,11 @@ class ComplexityValidator(object):
                 code=self.code)
         elif len(digits) < self.complexities.get("DIGITS", 0):
             raise ValidationError(
-                self.message % _("Must contain %(DIGITS)s or more digits") % self.complexities,
+                self.message % _("Must contain %(DIGITS)s or more numbers") % self.complexities,
                 code=self.code)
         elif len(punctuation) < self.complexities.get("PUNCTUATION", 0):
             raise ValidationError(
-                self.message % _("Must contain %(PUNCTUATION)s or more punctuation character") % self.complexities,
+                self.message % _("Must contain %(PUNCTUATION)s or more special characters") % self.complexities,
                 code=self.code)
         elif len(non_ascii) < self.complexities.get("NON ASCII", 0):
             raise ValidationError(
