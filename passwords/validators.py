@@ -89,6 +89,7 @@ class ComplexityValidator(object):
             raise ValidationError(
                 self.message % _("Must contain %s or more special characters: %s") %
                 (self.complexities['PUNCTUATION'], string.punctuation),
+                code=self.code)
         elif len(non_ascii) < self.complexities.get("NON ASCII", 0):
             raise ValidationError(
                 self.message % _("Must contain %(NON ASCII)s or more non ascii characters") % self.complexities,
