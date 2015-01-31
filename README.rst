@@ -52,7 +52,7 @@ Optional:
             "LOWER": 1,       # Lowercase
             "DIGITS": 1,      # Digits
             "PUNCTUATION": 1, # Punctuation (string.punctuation)
-            "NON ASCII": 1,   # Non Ascii (ord() >= 128)
+            "SPECIAL": 1,     # Special Characters
             "WORDS": 1        # Words (substrings seperates by a whitespace)
         }
 

@@ -1,9 +1,12 @@
 from __future__ import division
-import string
+import string, sys
 
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import smart_unicode
+if sys.version_info >= (3, 0):
+    from django.utils.encoding import smart_text
+else:
+    from django.utils.encoding import smart_unicode
 from django.conf import settings
 
 COMMON_SEQUENCES = [
@@ -55,11 +58,11 @@ class ComplexityValidator(object):
         if self.complexities is None:
             return
 
-        uppercase, lowercase, digits, non_ascii, punctuation = set(), set(), set(), set(), set()
+        uppercase, lowercase, digits, special, punctuation = set(), set(), set(), set(), set()
 
         for character in value:
-            if ord(character) >= 128:
-                non_ascii.add(character)
+            if character not in string.ascii_letters and not character.isdigit():
+                special.add(character)
             elif character.isupper():
                 uppercase.add(character)
             elif character.islower():
@@ -69,7 +72,7 @@ class ComplexityValidator(object):
             elif character in string.punctuation:
                 punctuation.add(character)
             else:
-                non_ascii.add(character)
+                special.add(character)
 
         words = set(value.split())
 
@@ -89,9 +92,9 @@ class ComplexityValidator(object):
             raise ValidationError(
                 self.message % _("Must contain %(PUNCTUATION)s or more punctuation character") % self.complexities,
                 code=self.code)
-        elif len(non_ascii) < self.complexities.get("NON ASCII", 0):
+        elif len(special) < self.complexities.get("SPECIAL", 0):
             raise ValidationError(
-                self.message % _("Must contain %(NON ASCII)s or more non ascii characters") % self.complexities,
+                self.message % _("Must contain %(SPECIAL)s or more special characters") % self.complexities,
                 code=self.code)
         elif len(words) < self.complexities.get("WORDS", 0):
             raise ValidationError(
@@ -117,12 +120,20 @@ class BaseSimilarityValidator(object):
             return m
 
         row1 = [0] * (n+1)
-        for i in xrange(0,m):
-            row2 = [i+1]
-            for j in xrange(0,n):
-                cost = ( needle[i] != haystack[j] )
-                row2.append(min(row1[j+1]+1, row2[j]+1, row1[j]+cost))
-            row1 = row2
+        if sys.version_info >= (3, 0):
+            for i in range(0,m):
+                row2 = [i+1]
+                for j in range(0,n):
+                    cost = ( needle[i] != haystack[j] )
+                    row2.append(min(row1[j+1]+1, row2[j]+1, row1[j]+cost))
+                row1 = row2
+        else:
+            for i in xrange(0,m):
+                row2 = [i+1]
+                for j in xrange(0,n):
+                    cost = ( needle[i] != haystack[j] )
+                    row2.append(min(row1[j+1]+1, row2[j]+1, row1[j]+cost))
+                row1 = row2
         return min(row1)
 
     def __call__(self, value):
