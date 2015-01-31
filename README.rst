@@ -52,7 +52,7 @@ Optional:
             "LOWER": 1,       # Lowercase
             "DIGITS": 1,      # Digits
             "PUNCTUATION": 1, # Punctuation (string.punctuation)
-            "SPECIAL": 1,   # Special Characters
+            "SPECIAL": 1,     # Special Characters
             "WORDS": 1        # Words (substrings seperates by a whitespace)
         }
 
