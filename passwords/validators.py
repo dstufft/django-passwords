@@ -58,11 +58,11 @@ class ComplexityValidator(object):
         if self.complexities is None:
             return
 
-        uppercase, lowercase, digits, non_ascii, punctuation = set(), set(), set(), set(), set()
+        uppercase, lowercase, digits, special, punctuation = set(), set(), set(), set(), set()
 
         for character in value:
-            if ord(character) >= 128:
-                non_ascii.add(character)
+            if character not in string.ascii_letters and not character.isdigit():
+                special.add(character)
             elif character.isupper():
                 uppercase.add(character)
             elif character.islower():
@@ -72,7 +72,7 @@ class ComplexityValidator(object):
             elif character in string.punctuation:
                 punctuation.add(character)
             else:
-                non_ascii.add(character)
+                special.add(character)
 
         words = set(value.split())
 
@@ -92,9 +92,9 @@ class ComplexityValidator(object):
             raise ValidationError(
                 self.message % _("Must contain %(PUNCTUATION)s or more punctuation character") % self.complexities,
                 code=self.code)
-        elif len(non_ascii) < self.complexities.get("NON ASCII", 0):
+        elif len(special) < self.complexities.get("SPECIAL", 0):
             raise ValidationError(
-                self.message % _("Must contain %(NON ASCII)s or more non ascii characters") % self.complexities,
+                self.message % _("Must contain %(SPECIAL)s or more special characters") % self.complexities,
                 code=self.code)
         elif len(words) < self.complexities.get("WORDS", 0):
             raise ValidationError(
