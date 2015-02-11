@@ -3,8 +3,12 @@ import string
 
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import smart_unicode
 from django.conf import settings
+try:
+    from django.utils.encoding import smart_text
+except ImportError:
+    from django.utils.encoding import smart_unicode as smart_text
+
 
 COMMON_SEQUENCES = [
     "0123456789",
@@ -144,7 +148,7 @@ class DictionaryValidator(BaseSimilarityValidator):
         if dictionary:
             with open(dictionary) as dictionary:
                 haystacks.extend(
-                    [smart_unicode(x.strip()) for x in dictionary.readlines()]
+                    [smart_text(x.strip()) for x in dictionary.readlines()]
                 )
         if words:
             haystacks.extend(words)
