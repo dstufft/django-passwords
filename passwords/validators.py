@@ -1,12 +1,14 @@
-from __future__ import division
-import string
+from __future__ import division, unicode_literals
 
+import string
+from collections import defaultdict
+
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
-from django.conf import settings
 try:
     from django.utils.encoding import smart_text
-except ImportError:
+except ImportError:  # django < 1.4.2
     from django.utils.encoding import smart_unicode as smart_text
 
 
@@ -23,12 +25,18 @@ COMMON_SEQUENCES = [
 ]
 
 # Settings
-PASSWORD_MIN_LENGTH = getattr(settings, "PASSWORD_MIN_LENGTH", 6)
-PASSWORD_MAX_LENGTH = getattr(settings, "PASSWORD_MAX_LENGTH", None)
-PASSWORD_DICTIONARY = getattr(settings, "PASSWORD_DICTIONARY", None)
-PASSWORD_MATCH_THRESHOLD = getattr(settings, "PASSWORD_MATCH_THRESHOLD", 0.9)
-PASSWORD_COMMON_SEQUENCES = getattr(settings, "PASSWORD_COMMON_SEQUENCES", COMMON_SEQUENCES)
-PASSWORD_COMPLEXITY = getattr(settings, "PASSWORD_COMPLEXITY", None)
+PASSWORD_MIN_LENGTH = getattr(
+    settings, "PASSWORD_MIN_LENGTH", 6)
+PASSWORD_MAX_LENGTH = getattr(
+    settings, "PASSWORD_MAX_LENGTH", None)
+PASSWORD_DICTIONARY = getattr(
+    settings, "PASSWORD_DICTIONARY", None)
+PASSWORD_MATCH_THRESHOLD = getattr(
+    settings, "PASSWORD_MATCH_THRESHOLD", 0.9)
+PASSWORD_COMMON_SEQUENCES = getattr(
+    settings, "PASSWORD_COMMON_SEQUENCES", COMMON_SEQUENCES)
+PASSWORD_COMPLEXITY = getattr(
+    settings, "PASSWORD_COMPLEXITY", None)
 
 
 class LengthValidator(object):
@@ -40,14 +48,14 @@ class LengthValidator(object):
         self.max_length = max_length
 
     def __call__(self, value):
+        err = None
         if self.min_length is not None and len(value) < self.min_length:
-            raise ValidationError(
-                self.message % _("Must be %s characters or more") % self.min_length,
-                code=self.code)
+            err = "Must be %s characters or more" % self.min_length
         elif self.max_length is not None and len(value) > self.max_length:
-            raise ValidationError(
-                self.message % _("Must be %s characters or less") % self.max_length,
-                code=self.code)
+            err = "Must be %s characters or less" % self.max_length
+
+        if err is not None:
+            raise ValidationError(self.message % err, code=self.code)
 
 
 class ComplexityValidator(object):
@@ -61,47 +69,44 @@ class ComplexityValidator(object):
         if self.complexities is None:
             return
 
-        uppercase, lowercase, digits, non_ascii, punctuation = set(), set(), set(), set(), set()
-
+        counter = defaultdict(set)
         for character in value:
             if ord(character) >= 128:
-                non_ascii.add(character)
+                counter['non_ascii'].add(character)
             elif character.isupper():
-                uppercase.add(character)
+                counter['uppercase'].add(character)
             elif character.islower():
-                lowercase.add(character)
+                counter['lowercase'].add(character)
             elif character.isdigit():
-                digits.add(character)
+                counter['digits'].add(character)
             elif character in string.punctuation:
-                punctuation.add(character)
+                counter['punctuation'].add(character)
             else:
-                non_ascii.add(character)
+                counter['non_ascii'].add(character)
+
+        def required(key):
+            # this makes the upcoming if/elif blizzard read more cleanly
+            return self.complexities.get(key, 0)
 
         words = set(value.split())
 
-        if len(uppercase) < self.complexities.get("UPPER", 0):
+        err = None
+        if len(counter['uppercase']) < required("UPPER"):
+            err = "Must contain %(UPPER)s or more uppercase characters"
+        elif len(counter['lowercase']) < required("LOWER"):
+            err = "Must contain %(LOWER)s or more lowercase characters"
+        elif len(counter['digits']) < required("DIGITS"):
+            err = "Must contain %(DIGITS)s or more digits"
+        elif len(counter['punctuation']) < required("PUNCTUATION"):
+            err = "Must contain %(PUNCTUATION)s or more punctuation character"
+        elif len(counter['non_ascii']) < required("NON ASCII"):
+            err = "Must contain %(NON ASCII)s or more non ascii characters"
+        elif len(words) < required("WORDS"):
+            err = "Must contain %(WORDS)s or more unique words"
+
+        if err is not None:
             raise ValidationError(
-                self.message % _("Must contain %(UPPER)s or more uppercase characters") % self.complexities,
-                code=self.code)
-        elif len(lowercase) < self.complexities.get("LOWER", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(LOWER)s or more lowercase characters") % self.complexities,
-                code=self.code)
-        elif len(digits) < self.complexities.get("DIGITS", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(DIGITS)s or more digits") % self.complexities,
-                code=self.code)
-        elif len(punctuation) < self.complexities.get("PUNCTUATION", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(PUNCTUATION)s or more punctuation character") % self.complexities,
-                code=self.code)
-        elif len(non_ascii) < self.complexities.get("NON ASCII", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(NON ASCII)s or more non ascii characters") % self.complexities,
-                code=self.code)
-        elif len(words) < self.complexities.get("WORDS", 0):
-            raise ValidationError(
-                self.message % _("Must contain %(WORDS)s or more unique words") % self.complexities,
+                self.message % err % self.complexities,
                 code=self.code)
 
 
