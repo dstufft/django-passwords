@@ -65,7 +65,9 @@ Optional:
 Usage
 -----
 
-To use the formfield simply import it and use it::
+To use the formfield simply import it and use it:
+
+.. code-block:: python
 
     from django import forms
     from passwords.fields import PasswordField
@@ -73,7 +75,9 @@ To use the formfield simply import it and use it::
     class ExampleForm(forms.Form):
         password = PasswordField(label="Password")
 
-You can make use of the validators on your own fields::
+You can make use of the validators on your own fields:
+
+.. code-block:: python
 
     from django import forms
     from passwords.validators import dictionary_words
@@ -82,7 +86,9 @@ You can make use of the validators on your own fields::
 
 You can also create custom validator instances to specify your own
 field-specific configurations, rather than using the global
-configurations::
+configurations:
+
+.. code-block:: python
 
     from django import forms
     from passwords.validators import (
