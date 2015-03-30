@@ -1,0 +1,79 @@
+# This file is distributed under the same license as the django-passwords package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-passwords\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-17 21:21+0400\n"
+"PO-Revision-Date: 2012-12-17 21:21+0400\n"
+"Last-Translator: Aleksey Porfirov <lexqt@yandex.ru>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: validators.py:31
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "Невалидная длина: %s"
+
+#: validators.py:41
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "должна составлять %s символов или более"
+
+#: validators.py:45
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "должна составлять %s символов или менее"
+
+#: validators.py:49
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "Должен быть более сложным: %s"
+
+#: validators.py:77
+#, python-format
+msgid "Must contain %(UPPER)s or more unique uppercase characters"
+msgstr "должен содержать %(UPPER)s или более уникальных прописных букв"
+
+#: validators.py:81
+#, python-format
+msgid "Must contain %(LOWER)s or more unique lowercase characters"
+msgstr "должен содержать %(LOWER)s или более уникальных строчных букв"
+
+#: validators.py:85
+#, python-format
+msgid "Must contain %(DIGITS)s or more unique digits"
+msgstr "должен содержать %(DIGITS)s или более уникальных цифр"
+
+#: validators.py:89
+#, python-format
+msgid "Must contain %(PUNCTUATION)s or more unique punctuation characters"
+msgstr "должен содержать %(PUNCTUATION)s или более уникальных знаков пунктуации"
+
+#: validators.py:93
+#, python-format
+msgid "Must contain %(SPECIAL)s or more unique special characters"
+msgstr "должен содержать %(SPECIAL)s или более уникальных специальных символов"
+
+#: validators.py:97
+#, python-format
+msgid "Must contain %(WORDS)s or more unique words"
+msgstr "должен содержать %(WORDS)s или более уникальных слов"
+
+#: validators.py:102
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "Слишком похож на [%(haystacks)s]"
+
+#: validators.py:138
+msgid "Based on a dictionary word"
+msgstr "Основан на слове из словаря"
+
+#: validators.py:154
+msgid "Based on a common sequence of characters"
+msgstr "Основан на распространненной последовательности символов"
