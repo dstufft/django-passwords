@@ -13,7 +13,11 @@ setup(
     packages=[
         "passwords",
     ],
-    classifiers=[
+    include_package_data=True,
+    install_requires = [
+        "Django >= 1.3",
+    ],
+    classifiers = [
         "Development Status :: 4 - Beta",
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
