@@ -21,7 +21,10 @@ COMMON_SEQUENCES = [
     'quertyuiop{}|asdfghjkl;"zxcvbnm<>?',
     "quertyuiopasdfghjklzxcvbnm",
     "1qaz2wsx3edc4rfv5tgb6yhn7ujm8ik,9ol.0p;/-['=]\\",
-    "qazwsxedcrfvtgbyhnujmikolp"
+    "qazwsxedcrfvtgbyhnujmikolp",
+    "qwertzuiopü+asdfghjklöä#<yxcvbnm,.-",
+    "qwertzuiopü*asdfghjklöä'>yxcvbnm;:_",
+    "qaywsxedcrfvtgbzhnujmikolp",
 ]
 
 # Settings
@@ -184,6 +187,7 @@ class DictionaryValidator(BaseSimilarityValidator):
 class CommonSequenceValidator(BaseSimilarityValidator):
     message = _("Based on a common sequence of characters")
     code = "common_sequence"
+
 
 validate_length = LengthValidator(PASSWORD_MIN_LENGTH, PASSWORD_MAX_LENGTH)
 complexity = ComplexityValidator(PASSWORD_COMPLEXITY)
