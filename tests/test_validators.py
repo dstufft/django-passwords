@@ -109,6 +109,22 @@ class ComplexityValidatorTests(ValidatorTestCase):
         self.assertInvalid(cv, 'sOME lOWERCASE', 'lowercase')
         self.assertInvalid(cv, 'all lowercase', 'lowercase')
 
+    def test_minimum_letter_count(self):
+        cv = self.mkvalidator(LETTERS=0)
+        self.assertValid(cv, '1234. ?')
+        self.assertValid(cv, 'soME 123')
+        self.assertValid(cv, 'allletters')
+
+        cv = self.mkvalidator(LETTERS=1)
+        self.assertInvalid(cv, '1234. ?', 'letter')
+        self.assertValid(cv, 'soME 123')
+        self.assertValid(cv, 'allletters')
+
+        cv = self.mkvalidator(LETTERS=100)
+        self.assertInvalid(cv, '1234. ?', 'letter')
+        self.assertInvalid(cv, 'soME 123', 'letter')
+        self.assertInvalid(cv, 'allletters', 'letter')
+
     def test_minimum_digit_count(self):
         cv = self.mkvalidator(DIGITS=0)
         self.assertValid(cv, '')

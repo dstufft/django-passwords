@@ -56,6 +56,7 @@ Optional:
         PASSWORD_COMPLEXITY = { # You can omit any or all of these for no limit for that particular set
             "UPPER": 1,        # Uppercase
             "LOWER": 1,        # Lowercase
+            "LETTERS": 1,       # Either uppercase or lowercase letters
             "DIGITS": 1,       # Digits
             "PUNCTUATION": 1,  # Punctuation (string.punctuation)
             "SPECIAL": 1,      # Not alphanumeric, space or punctuation character
