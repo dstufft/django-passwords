@@ -73,14 +73,16 @@ class ComplexityValidator(object):
         if self.complexities is None:
             return
 
-        uppercase, lowercase, digits = set(), set(), set()
-        special, punctuation = set(), set()
+        uppercase, lowercase, letters = set(), set(), set()
+        digits, special, punctuation = set(), set(), set()
 
         for character in value:
             if character.isupper():
                 uppercase.add(character)
+                letters.add(character)
             elif character.islower():
                 lowercase.add(character)
+                letters.add(character)
             elif character.isdigit():
                 digits.add(character)
             elif character in string.punctuation:
@@ -98,6 +100,10 @@ class ComplexityValidator(object):
         if len(lowercase) < self.complexities.get("LOWER", 0):
             errors.append(
                 _("must contain %(LOWER)s or more unique lowercase characters") %
+                self.complexities)
+        if len(letters) < self.complexities.get("LETTERS", 0):
+            errors.append(
+                _("must contain %(LETTERS)s or more unique letters") %
                 self.complexities)
         if len(digits) < self.complexities.get("DIGITS", 0):
             errors.append(
