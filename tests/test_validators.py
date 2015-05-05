@@ -170,20 +170,20 @@ class ComplexityValidatorTests(ValidatorTestCase):
         one = '\x00'  # null
         many = "\x00\x01\x02\x03\x04\x05\t\n\r"
 
-        cv = self.mkvalidator(**{'NON ASCII': 0})
+        cv = self.mkvalidator(SPECIAL=0)
         self.assertValid(cv, none)
         self.assertValid(cv, one)
         self.assertValid(cv, many)
 
-        cv = self.mkvalidator(**{'NON ASCII': 1})
-        self.assertInvalid(cv, none, 'non ascii')
+        cv = self.mkvalidator(SPECIAL=1)
+        self.assertInvalid(cv, none)
         self.assertValid(cv, one)
         self.assertValid(cv, many)
 
-        cv = self.mkvalidator(**{'NON ASCII': 100})
-        self.assertInvalid(cv, none, 'non ascii')
-        self.assertInvalid(cv, one, 'non ascii')
-        self.assertInvalid(cv, many, 'non ascii')
+        cv = self.mkvalidator(SPECIAL=100)
+        self.assertInvalid(cv, none)
+        self.assertInvalid(cv, one)
+        self.assertInvalid(cv, many)
 
     def test_minimum_words_count(self):
         none = ''
