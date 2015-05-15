@@ -54,9 +54,9 @@ class LengthValidator(object):
     def __call__(self, value):
         err = None
         if self.min_length is not None and len(value) < self.min_length:
-            err = "Must be %s characters or more" % self.min_length
+            err = _("Must be %s characters or more") % self.min_length
         elif self.max_length is not None and len(value) > self.max_length:
-            err = "Must be %s characters or less" % self.max_length
+            err = _("Must be %s characters or less") % self.max_length
 
         if err is not None:
             raise ValidationError(self.message % err, code=self.code)
