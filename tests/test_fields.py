@@ -16,6 +16,13 @@ class TestFields(TestCase):
         p = fields.PasswordField(widget=TimeInput())
         assert isinstance(p.widget, TimeInput)
 
+    def test_widget_attributes(self):
+        p = fields.PasswordField()
+        # Verify that our default minimum length creates some sort of HTML5
+        # validation.
+        self.assertTrue(
+            'minlength' in p.widget.attrs or 'pattern' in p.widget.attrs)
+
     def test_default_validation(self):
         # because our tests/__init__ has not provided any configuration to
         # Django, we get default behaviour here.
