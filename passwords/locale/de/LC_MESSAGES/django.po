@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: django-passwords\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-27 12:30+0200\n"
+"PO-Revision-Date: 2015-08-27 14:09+0200\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Christian Schürmann <christian.schuermann@bluewin.ch>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: fields.py:27
+#, python-format
+msgid "%i to %i characters"
+msgstr "Zwischen %i und %i Zeichen"
+
+#: fields.py:31
+#, python-format
+msgid "%i characters minimum"
+msgstr "Mindestens %i Zeichen"
+
+#: validators.py:47
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "Ungültige Länge (%s)"
+
+#: validators.py:57
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "Es müssen %s oder mehr Zeichen enthalten sein"
+
+#: validators.py:59
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "Es müssen %s oder weniger Zeichen enthalten sein"
+
+#: validators.py:66
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "Höhere Komplexität erforderlich (%s)"
+
+#: validators.py:98
+#, python-format
+msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgstr "Es müssen %(UPPER)s oder mehr verschiedene Großbuchstaben vorhanden sein"
+
+#: validators.py:102
+#, python-format
+msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgstr "Es müssen %(LOWER)s oder mehr verschiedene Kleinbuchstaben vorhanden sein"
+
+#: validators.py:106
+#, python-format
+msgid "must contain %(LETTERS)s or more unique letters"
+msgstr "Es müssen %(LETTERS)s oder mehr verschiedene Buchstaben vorhanden sein"
+
+#: validators.py:110
+#, python-format
+msgid "must contain %(DIGITS)s or more unique digits"
+msgstr "Es müssen %(DIGITS)s oder mehr verschiedene Zahlen vorhanden sein"
+
+#: validators.py:114
+#, python-format
+msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgstr "Es müssen %(PUNCTUATION)s oder mehr verschiedene Satzzeichen enthalten sein: %%s"
+
+#: validators.py:118
+#, python-format
+msgid "must contain %(SPECIAL)s or more non unique special characters"
+msgstr "Es müssen %(SPECIAL)s oder mehr Sonderzeichen enthalten sein"
+
+#: validators.py:122
+#, python-format
+msgid "must contain %(WORDS)s or more unique words"
+msgstr "Es müssen %(WORDS)s oder mehr verschiedene Wörter enthalten sein"
+
+#: validators.py:132
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "Zu ähnlich zu [%(haystacks)s]"
+
+#: validators.py:176
+msgid "Based on a dictionary word"
+msgstr "Basiert auf einem Wort im Wörterbuch"
+
+#: validators.py:195
+msgid "Based on a common sequence of characters"
+msgstr "Basiert auf einer verbreiteten Sequenz von Buchstaben"
