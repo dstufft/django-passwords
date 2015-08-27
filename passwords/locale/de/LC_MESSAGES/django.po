@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: django-passwords\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-27 12:30+0200\n"
-"PO-Revision-Date: 2015-08-27 13:45+0200\n"
+"PO-Revision-Date: 2015-08-27 14:09+0200\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,37 +46,37 @@ msgstr "Höhere Komplexität erforderlich (%s)"
 #: validators.py:98
 #, python-format
 msgid "must contain %(UPPER)s or more unique uppercase characters"
-msgstr "Es müssen %(UPPER)s oder mehr eindeutige Großbuchstaben vorhanden sein"
+msgstr "Es müssen %(UPPER)s oder mehr verschiedene Großbuchstaben vorhanden sein"
 
 #: validators.py:102
 #, python-format
 msgid "must contain %(LOWER)s or more unique lowercase characters"
-msgstr "Es müssen %(LOWER)s oder mehr eindeutige Kleinbuchstaben vorhanden sein"
+msgstr "Es müssen %(LOWER)s oder mehr verschiedene Kleinbuchstaben vorhanden sein"
 
 #: validators.py:106
 #, python-format
 msgid "must contain %(LETTERS)s or more unique letters"
-msgstr "Es müssen %(LETTERS)s oder mehr eindeutige Buchstaben vorhanden sein"
+msgstr "Es müssen %(LETTERS)s oder mehr verschiedene Buchstaben vorhanden sein"
 
 #: validators.py:110
 #, python-format
 msgid "must contain %(DIGITS)s or more unique digits"
-msgstr "Es müssen %(DIGITS)s oder mehr eindeutige Zahlen vorhanden sein"
+msgstr "Es müssen %(DIGITS)s oder mehr verschiedene Zahlen vorhanden sein"
 
 #: validators.py:114
 #, python-format
 msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
-msgstr "Es müssen %(PUNCTUATION)s oder mehr eindeutige Satzzeichen enthalten sein: %%s"
+msgstr "Es müssen %(PUNCTUATION)s oder mehr verschiedene Satzzeichen enthalten sein: %%s"
 
 #: validators.py:118
 #, python-format
 msgid "must contain %(SPECIAL)s or more non unique special characters"
-msgstr "Es müssen %(SPECIAL)s oder mehr nicht eindeutige Sonderzeichen enthalten sein"
+msgstr "Es müssen %(SPECIAL)s oder mehr Sonderzeichen enthalten sein"
 
 #: validators.py:122
 #, python-format
 msgid "must contain %(WORDS)s or more unique words"
-msgstr "Es müssen %(WORDS)s oder mehr eindeutige Wörter enthalten sein"
+msgstr "Es müssen %(WORDS)s oder mehr verschiedene Wörter enthalten sein"
 
 #: validators.py:132
 #, python-format
