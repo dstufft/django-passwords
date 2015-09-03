@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-passwords\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-17 21:21+0400\n"
+"POT-Creation-Date: 2015-09-03 13:44+0300\n"
 "PO-Revision-Date: 2012-12-17 21:21+0400\n"
-"Last-Translator: Aleksey Porfirov <lexqt@yandex.ru>\n"
+"Last-Translator: Nikolay Malakhov <nomen.infitior@gmail.com>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -15,65 +15,81 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: validators.py:31
+#: fields.py:27
+#, python-format
+msgid "%i to %i characters"
+msgstr "От %i до %i символов"
+
+#: fields.py:31
+#, python-format
+msgid "%i characters minimum"
+msgstr "Минимум %i символов"
+
+#: validators.py:47
 #, python-format
 msgid "Invalid Length (%s)"
-msgstr "Невалидная длина: %s"
+msgstr "Неправильная длина: %s"
 
-#: validators.py:41
+#: validators.py:57
 #, python-format
 msgid "Must be %s characters or more"
 msgstr "должна составлять %s символов или более"
 
-#: validators.py:45
+#: validators.py:59
 #, python-format
 msgid "Must be %s characters or less"
 msgstr "должна составлять %s символов или менее"
 
-#: validators.py:49
+#: validators.py:66
 #, python-format
 msgid "Must be more complex (%s)"
 msgstr "Должен быть более сложным: %s"
 
-#: validators.py:77
+#: validators.py:98
 #, python-format
-msgid "Must contain %(UPPER)s or more unique uppercase characters"
+msgid "must contain %(UPPER)s or more unique uppercase characters"
 msgstr "должен содержать %(UPPER)s или более уникальных прописных букв"
 
-#: validators.py:81
+#: validators.py:102
 #, python-format
-msgid "Must contain %(LOWER)s or more unique lowercase characters"
+msgid "must contain %(LOWER)s or more unique lowercase characters"
 msgstr "должен содержать %(LOWER)s или более уникальных строчных букв"
 
-#: validators.py:85
+#: validators.py:106
 #, python-format
-msgid "Must contain %(DIGITS)s or more unique digits"
+msgid "must contain %(LETTERS)s or more unique letters"
+msgstr "должен содержать %(LETTERS)s или более уникальных букв"
+
+#: validators.py:110
+#, python-format
+msgid "must contain %(DIGITS)s or more unique digits"
 msgstr "должен содержать %(DIGITS)s или более уникальных цифр"
 
-#: validators.py:89
+#: validators.py:114
 #, python-format
-msgid "Must contain %(PUNCTUATION)s or more unique punctuation characters"
-msgstr "должен содержать %(PUNCTUATION)s или более уникальных знаков пунктуации"
+msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgstr ""
+"должен содержать %(PUNCTUATION)s или более уникальных знаков пунктуации: %%s"
 
-#: validators.py:93
+#: validators.py:118
 #, python-format
-msgid "Must contain %(SPECIAL)s or more unique special characters"
+msgid "must contain %(SPECIAL)s or more non unique special characters"
 msgstr "должен содержать %(SPECIAL)s или более уникальных специальных символов"
 
-#: validators.py:97
+#: validators.py:122
 #, python-format
-msgid "Must contain %(WORDS)s or more unique words"
+msgid "must contain %(WORDS)s or more unique words"
 msgstr "должен содержать %(WORDS)s или более уникальных слов"
 
-#: validators.py:102
+#: validators.py:132
 #, python-format
 msgid "Too Similar to [%(haystacks)s]"
 msgstr "Слишком похож на [%(haystacks)s]"
 
-#: validators.py:138
+#: validators.py:176
 msgid "Based on a dictionary word"
 msgstr "Основан на слове из словаря"
 
-#: validators.py:154
+#: validators.py:195
 msgid "Based on a common sequence of characters"
 msgstr "Основан на распространненной последовательности символов"
