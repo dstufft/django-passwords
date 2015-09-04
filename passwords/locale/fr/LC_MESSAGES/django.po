@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-22 10:24+0200\n"
+"POT-Creation-Date: 2015-09-03 23:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Antoine Nguyen <tonio@ngyn.org>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -13,6 +13,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: fields.py:27
+#, python-format
+msgid "%i to %i characters"
+msgstr "%i à %i caractères"
+
+#: fields.py:31
+#, python-format
+msgid "%i characters minimum"
+msgstr "%i caractères minimum"
 
 #: validators.py:47
 #, python-format
@@ -57,7 +67,8 @@ msgstr "doit contenir %(DIGITS)s digits uniques ou plus"
 #: validators.py:114
 #, python-format
 msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
-msgstr "doit contenir %(PUNCTUATION)s caractères de ponctuation uniques ou plus : %%s"
+msgstr ""
+"doit contenir %(PUNCTUATION)s caractères de ponctuation uniques ou plus : %%s"
 
 #: validators.py:118
 #, python-format
