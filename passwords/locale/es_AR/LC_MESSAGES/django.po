@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: django-passwords\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-21 01:09-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: fields.py:27
+#, python-format
+msgid "%i to %i characters"
+msgstr "%i a %i caracteres"
+
+#: fields.py:31
+#, python-format
+msgid "%i characters minimum"
+msgstr "%i caracteres como mínimo"
+
+#: validators.py:47
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "Longitud inválida (%s)"
+
+#: validators.py:57
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "Deben ser por lo menos %s caracteres"
+
+#: validators.py:59
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "Deben ser %s caracteres o menos"
+
+#: validators.py:66
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "Debe ser mas compleja (%s)"
+
+#: validators.py:98
+#, fuzzy, python-format
+#| msgid "Must contain %(UPPER)s or more uppercase characters"
+msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgstr "Debe contener %(UPPER)s o más caracteres en mayúscula"
+
+#: validators.py:102
+#, fuzzy, python-format
+#| msgid "Must contain %(LOWER)s or more lowercase characters"
+msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgstr "Debe contener %(LOWER)s o más caracteres en minúscula"
+
+#: validators.py:106
+#, fuzzy, python-format
+#| msgid "Must contain %(WORDS)s or more unique words"
+msgid "must contain %(LETTERS)s or more unique letters"
+msgstr "Debe contener %(WORDS)s o más palabras únicas"
+
+#: validators.py:110
+#, fuzzy, python-format
+#| msgid "Must contain %(DIGITS)s or more digits"
+msgid "must contain %(DIGITS)s or more unique digits"
+msgstr "Debe contener %(DIGITS)s o más dígitos"
+
+#: validators.py:114
+#, fuzzy, python-format
+#| msgid "Must contain %(PUNCTUATION)s or more punctuation character"
+msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgstr "Debe contener %(PUNCTUATION)s o más signos de puntuación"
+
+#: validators.py:118
+#, fuzzy, python-format
+#| msgid "Must contain %(NON ASCII)s or more non ascii characters"
+msgid "must contain %(SPECIAL)s or more non unique special characters"
+msgstr "Debe contener %(NON ASCII)s o más caracteres no ascii"
+
+#: validators.py:122
+#, fuzzy, python-format
+#| msgid "Must contain %(WORDS)s or more unique words"
+msgid "must contain %(WORDS)s or more unique words"
+msgstr "Debe contener %(WORDS)s o más palabras únicas"
+
+#: validators.py:132
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "Demasiado similar a [%(haystacks)s]"
+
+#: validators.py:176
+#, fuzzy
+#| msgid "Based on a dictionary word."
+msgid "Based on a dictionary word"
+msgstr "Basada en un diccionario de palabras"
+
+#: validators.py:195
+msgid "Based on a common sequence of characters"
+msgstr "Basado en una secuencia común de caracteres"
