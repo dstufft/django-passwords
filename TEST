@@ -1,0 +1,17 @@
+To run the test suite using your current environment's Python interpreter and
+packages, first make sure you have the testing dependencies installed:
+
+    pip install -r requirements/test.txt
+
+Then run:
+
+    py.test
+
+Optionally append `--cov passwords' for coverage output.
+
+To run py.test against different combinations of Django and Python versions,
+run:
+
+    tox
+
+Instead. Modify tox.ini to alter those combinations.

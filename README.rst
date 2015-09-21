@@ -10,15 +10,21 @@ Installation
 You can install django-passwords with pip by typing::
 
     pip install django-passwords
-    
+
 Or with easy_install by typing::
 
     easy_install django-passwords
-    
+
 Or manually by downloading a tarball and typing::
 
     python setup.py install
-    
+
+Compatibility
+-------------
+
+django-passwords is compatible with Django 1.2 through 1.8 alpha. Pythons 2.7
+and 3.4 are both supported.
+
 Settings
 --------
 
@@ -47,22 +53,54 @@ Optional:
 
     Specifies number of characters within various sets that a password must contain::
 
-        PASSWORD_COMPLEXITY = { # You can ommit any or all of these for no limit for that particular set
-            "UPPER": 1,       # Uppercase
-            "LOWER": 1,       # Lowercase
-            "DIGITS": 1,      # Digits
-            "PUNCTUATION": 1, # Punctuation (string.punctuation)
-            "NON ASCII": 1,   # Non Ascii (ord() >= 128)
-            "WORDS": 1        # Words (substrings seperates by a whitespace)
+        PASSWORD_COMPLEXITY = { # You can omit any or all of these for no limit for that particular set
+            "UPPER": 1,        # Uppercase
+            "LOWER": 1,        # Lowercase
+            "LETTERS": 1,       # Either uppercase or lowercase letters
+            "DIGITS": 1,       # Digits
+            "PUNCTUATION": 1,  # Punctuation (string.punctuation)
+            "SPECIAL": 1,      # Not alphanumeric, space or punctuation character
+            "WORDS": 1         # Words (alphanumeric sequences separated by a whitespace or punctuation character)
         }
 
 Usage
 -----
 
-    To use the formfield simply import it and use it::
+To use the formfield simply import it and use it:
 
-        from django import forms
-        from passwords.fields import PasswordField
+.. code-block:: python
 
-        class ExampleForm(forms.Form):
-            password = PasswordField(label="Password")
+    from django import forms
+    from passwords.fields import PasswordField
+
+    class ExampleForm(forms.Form):
+        password = PasswordField(label="Password")
+
+You can make use of the validators on your own fields:
+
+.. code-block:: python
+
+    from django import forms
+    from passwords.validators import dictionary_words
+
+    field = forms.CharField(validators=[dictionary_words])
+
+You can also create custom validator instances to specify your own
+field-specific configurations, rather than using the global
+configurations:
+
+.. code-block:: python
+
+    from django import forms
+    from passwords.validators import (
+        DictionaryValidator, LengthValidator, ComplexityValidator)
+
+    field = forms.CharField(validators=[
+        DictionaryValidator(words=['banned_word'], threshold=0.9),
+        LengthValidator(min_length=8),
+        ComplexityValidator(complexities=dict(
+            UPPER=1,
+            LOWER=1,
+            DIGITS=1
+        })),
+    ])

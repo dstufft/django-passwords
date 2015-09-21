@@ -1,0 +1,94 @@
+# This file is distributed under the same license as the django-passwords package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-03 23:44+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Antoine Nguyen <tonio@ngyn.org>\n"
+"Language-Team: French <fr@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: fields.py:27
+#, python-format
+msgid "%i to %i characters"
+msgstr "%i à %i caractères"
+
+#: fields.py:31
+#, python-format
+msgid "%i characters minimum"
+msgstr "%i caractères minimum"
+
+#: validators.py:47
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "Taille invalide (%s)"
+
+#: validators.py:57
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "Doit faire %s caractères ou plus"
+
+#: validators.py:59
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "Doit faire %s caractères ou moins"
+
+#: validators.py:66
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "Doit être plus complexe (%s)"
+
+#: validators.py:98
+#, python-format
+msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgstr "doit contenir %(UPPER)s caractères en majuscule uniques ou plus"
+
+#: validators.py:102
+#, python-format
+msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgstr "doit contenir %(LOWER)s caractères en minuscule uniques ou plus"
+
+#: validators.py:106
+#, python-format
+msgid "must contain %(LETTERS)s or more unique letters"
+msgstr "doit contenir %(LETTERS)s lettres uniques ou plus"
+
+#: validators.py:110
+#, python-format
+msgid "must contain %(DIGITS)s or more unique digits"
+msgstr "doit contenir %(DIGITS)s digits uniques ou plus"
+
+#: validators.py:114
+#, python-format
+msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgstr ""
+"doit contenir %(PUNCTUATION)s caractères de ponctuation uniques ou plus : %%s"
+
+#: validators.py:118
+#, python-format
+msgid "must contain %(SPECIAL)s or more non unique special characters"
+msgstr "doit contenir %(SPECIAL)s caractères spéciaux non uniques ou plus"
+
+#: validators.py:122
+#, python-format
+msgid "must contain %(WORDS)s or more unique words"
+msgstr "doit contenir %(WORDS)s mots uniques ou plus"
+
+#: validators.py:132
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "Trop similaire à [%(haystacks)s]"
+
+#: validators.py:176
+msgid "Based on a dictionary word"
+msgstr "Basé sur un mot du dictionnaire"
+
+#: validators.py:195
+msgid "Based on a common sequence of characters"
+msgstr "Basé sur une séquence commune de caractères"

@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-12 22:52+0900\n"
+"PO-Revision-Date: 2015-08-12 23:36+0900\n"
+"Last-Translator: Shugo Nakamura <info@hoerin.com>\n"
+"Language-Team: hoerin <info@hoerin.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.7\n"
+"Language: Japanese\n"
+
+#: validators.py:47
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "無効な長さです (%s)"
+
+#: validators.py:57
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "%s文字以上でご入力ください"
+
+#: validators.py:59
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "%s文字以下でご入力ください"
+
+#: validators.py:66
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "複雑なパスワードをご入力ください (%s)"
+
+#: validators.py:98
+#, python-format
+msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgstr "%(UPPER)s文字以上の大文字をご入力ください"
+
+#: validators.py:102
+#, python-format
+msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgstr "%(LOWER)s文字以上の小文字をご入力ください"
+
+#: validators.py:106
+#, python-format
+msgid "must contain %(LETTERS)s or more unique letters"
+msgstr "%(LETTERS)s文字以上の大文字または小文字をご入力ください"
+
+#: validators.py:110
+#, python-format
+msgid "must contain %(DIGITS)s or more unique digits"
+msgstr "%(DIGITS)s文字以上の数字をご入力ください"
+
+#: validators.py:114
+#, python-format
+msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgstr "%(PUNCTUATION)s文字以上の記号をご入力ください"
+
+#: validators.py:118
+#, python-format
+msgid "must contain %(SPECIAL)s or more non unique special characters"
+msgstr "%(SPECIAL)s文字以上のスペースまたは記号をご入力ください"
+
+#: validators.py:122
+#, python-format
+msgid "must contain %(WORDS)s or more unique words"
+msgstr "%(WORDS)s語以上の単語をご入力ください"
+
+#: validators.py:132
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "[%(haystacks)s]と似すぎています"
+
+#: validators.py:176
+msgid "Based on a dictionary word"
+msgstr "辞書語が含まれています"
+
+#: validators.py:195
+msgid "Based on a common sequence of characters"
+msgstr "推測しやすい文字の並びが含まれています"
