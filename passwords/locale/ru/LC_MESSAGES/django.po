@@ -92,4 +92,4 @@ msgstr "Основан на слове из словаря"
 
 #: validators.py:195
 msgid "Based on a common sequence of characters"
-msgstr "Основан на распространненной последовательности символов"
+msgstr "Основан на распространенной последовательности символов"
