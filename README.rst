@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.org/jacoor/django-passwords.svg?branch=master
-    :target: https://travis-ci.org/jacoor/django-passwords
+.. image:: https://travis-ci.org/dstufft/django-passwords.svg?branch=master
+    :target: https://travis-ci.org/dstufft/django-passwords
 
 Django Passwords
 ================
