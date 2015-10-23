@@ -13,7 +13,7 @@ env:
   - DJANGO="django>=1.8,<1.9"
 
 install:
- - pip install -r tests/requirements.txt
+ - pip install -r requirements/test.txt
  - pip install coverage coveralls
  - pip install $DJANGO
 
