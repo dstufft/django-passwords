@@ -1,7 +1,7 @@
 To run the test suite using your current environment's Python interpreter and
 packages, first make sure you have the testing dependencies installed:
 
-    pip install -r requirements/test.txt
+    pip install -r tests/requirements.txt
 
 Then run:
 
