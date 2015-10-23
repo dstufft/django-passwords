@@ -16,7 +16,7 @@ install:
  - pip install $DJANGO
 
 script:
-  - coverage run --source= py.test tests
+  - py.test tests --cov passwords
 
 matrix:
   exclude:
