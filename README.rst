@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/jacoor/django-passwords.svg?branch=master
+    :target: https://travis-ci.org/jacoor/django-passwords
+
 Django Passwords
 ================
 
