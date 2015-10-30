@@ -1,4 +1,6 @@
 /.tox
+/.cache
+.venv
 
 *.egg-info
 __pycache__
@@ -7,3 +9,5 @@ __pycache__
 
 build
 dist
+*.sublime-project
+*.sublime-workspace
