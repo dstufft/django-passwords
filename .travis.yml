@@ -53,4 +53,4 @@ after_success:
 notifications:
   email:
     recipients:
-      - jacek@ivolution.pl
+      - maccesch@web.de
