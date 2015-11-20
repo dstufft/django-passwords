@@ -123,7 +123,7 @@ class ComplexityValidator(object):
                 self.complexities)
 
         if errors:
-            raise ValidationError(self.message % (u'must contain ' + u', '.join(errors),),
+            raise ValidationError(self.message % (_(u'must contain ') + u', '.join(errors),),
                                   code=self.code)
 
 
