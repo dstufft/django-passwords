@@ -1,7 +1,6 @@
 # coding=utf-8
 from __future__ import division, unicode_literals
 
-import string
 import re
 
 from django.conf import settings
@@ -74,7 +73,7 @@ class ComplexityValidator(object):
             return
 
         uppercase, lowercase, letters = set(), set(), set()
-        digits, special, punctuation = set(), set(), set()
+        digits, special = set(), set()
 
         for character in value:
             if character.isupper():
@@ -85,8 +84,6 @@ class ComplexityValidator(object):
                 letters.add(character)
             elif character.isdigit():
                 digits.add(character)
-            elif character in string.punctuation:
-                punctuation.add(character)
             elif not character.isspace():
                 special.add(character)
 
@@ -109,10 +106,6 @@ class ComplexityValidator(object):
             errors.append(
                 _("%(DIGITS)s or more unique digits") %
                 self.complexities)
-        if len(punctuation) < self.complexities.get("PUNCTUATION", 0):
-            errors.append(
-                (_("%(PUNCTUATION)s or more unique punctuation characters: %%s"
-                  ) % self.complexities) % string.punctuation)
         if len(special) < self.complexities.get("SPECIAL", 0):
             errors.append(
                 _("%(SPECIAL)s or more non unique special characters") %
@@ -125,7 +118,6 @@ class ComplexityValidator(object):
         if errors:
             raise ValidationError(self.message % (_(u'must contain ') + u', '.join(errors),),
                                   code=self.code)
-
 
 
 class BaseSimilarityValidator(object):

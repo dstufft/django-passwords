@@ -147,26 +147,26 @@ class ComplexityValidatorTests(ValidatorTestCase):
         # this is a copy of string.punctuation
         allpunc = r'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 
-        cv = self.mkvalidator(PUNCTUATION=0)
+        cv = self.mkvalidator(SPECIAL=0)
         self.assertValid(cv, none)
         self.assertValid(cv, one)
         self.assertValid(cv, mixed)
         self.assertValid(cv, allpunc)
 
-        cv = self.mkvalidator(PUNCTUATION=1)
-        self.assertInvalid(cv, none, 'punctuation')
+        cv = self.mkvalidator(SPECIAL=1)
+        self.assertInvalid(cv, none, 'special')
         self.assertValid(cv, one)
         self.assertValid(cv, mixed)
         self.assertValid(cv, allpunc)
 
-        cv = self.mkvalidator(PUNCTUATION=100)
-        self.assertInvalid(cv, none, 'punctuation')
-        self.assertInvalid(cv, one, 'punctuation')
-        self.assertInvalid(cv, mixed, 'punctuation')
-        self.assertInvalid(cv, allpunc, 'punctuation')
+        cv = self.mkvalidator(SPECIAL=100)
+        self.assertInvalid(cv, none, 'special')
+        self.assertInvalid(cv, one, 'special')
+        self.assertInvalid(cv, mixed, 'special')
+        self.assertInvalid(cv, allpunc, 'special')
 
     def test_minimum_nonascii_count(self):
-        none = '{regularchars_and_punctuation_100}'
+        none = 'regularchars and numbers 100'
         one = '\x00'  # null
         many = "\x00\x01\x02\x03\x04\x05\t\n\r"
 
