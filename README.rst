@@ -61,7 +61,6 @@ Optional:
             "LOWER": 1,        # Lowercase
             "LETTERS": 1,       # Either uppercase or lowercase letters
             "DIGITS": 1,       # Digits
-            "PUNCTUATION": 1,  # Punctuation (string.punctuation)
             "SPECIAL": 1,      # Not alphanumeric, space or punctuation character
             "WORDS": 1         # Words (alphanumeric sequences separated by a whitespace or punctuation character)
         }
