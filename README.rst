@@ -1,5 +1,12 @@
 .. image:: https://travis-ci.org/dstufft/django-passwords.svg?branch=master
     :target: https://travis-ci.org/dstufft/django-passwords
+.. image:: https://img.shields.io/pypi/v/django-passwords.svg
+    :target: https://pypi.python.org/pypi/django-passwords/
+.. image:: https://img.shields.io/pypi/dm/django-passwords.svg
+    :target: https://pypi.python.org/pypi/django-passwords/
+.. image:: https://img.shields.io/pypi/l/django-passwords.svg
+    :target: https://pypi.python.org/pypi/django-passwords/
+
 
 Django Passwords
 ================
