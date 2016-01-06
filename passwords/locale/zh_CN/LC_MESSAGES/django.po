@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-06 20:20+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: fields.py:27
+#, python-format
+msgid "%i to %i characters"
+msgstr "%i 个 到 %i 个字符"
+
+#: fields.py:31
+#, python-format
+msgid "%i characters minimum"
+msgstr "至少 %i 个字符"
+
+#: validators.py:46
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "无效的长度 (%s)"
+
+#: validators.py:56
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "至少需要 %s 个以上字符"
+
+#: validators.py:58
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "必须少于 %s 个字符"
+
+#: validators.py:65
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "必须更加复杂 (%s)"
+
+#: validators.py:95
+#, python-format
+msgid "%(UPPER)s or more unique uppercase characters"
+msgstr "%(UPPER)s 个及以上不同的大写字母"
+
+#: validators.py:99
+#, python-format
+msgid "%(LOWER)s or more unique lowercase characters"
+msgstr "%(LOWER)s 个及以上不同的小写字母"
+
+#: validators.py:103
+#, python-format
+msgid "%(LETTERS)s or more unique letters"
+msgstr "%(LETTERS)s 个及以上不同的大小写字母"
+
+#: validators.py:107
+#, python-format
+msgid "%(DIGITS)s or more unique digits"
+msgstr "%(DIGITS)s 个及以上不同的数字"
+
+#: validators.py:111
+#, python-format
+msgid "%(SPECIAL)s or more non unique special characters"
+msgstr "%(SPECIAL)s 个及以上的特殊字符"
+
+#: validators.py:115
+#, python-format
+msgid "%(WORDS)s or more unique words"
+msgstr "%(WORDS)s 个及以上不同的单词"
+
+#: validators.py:119
+msgid "must contain "
+msgstr "必须包含 "
+
+#: validators.py:124
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "和  [%(haystacks)s] 过于相似"
+
+#: validators.py:168
+msgid "Based on a dictionary word"
+msgstr "包含一些字典里的单词"
+
+#: validators.py:187
+msgid "Based on a common sequence of characters"
+msgstr "包含一些过于常见的字符序列"
