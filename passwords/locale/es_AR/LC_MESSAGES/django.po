@@ -51,38 +51,42 @@ msgstr "Debe ser mas compleja (%s)"
 #: validators.py:98
 #, fuzzy, python-format
 #| msgid "Must contain %(UPPER)s or more uppercase characters"
-msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgid "%(UPPER)s or more unique uppercase characters"
 msgstr "Debe contener %(UPPER)s o más caracteres en mayúscula"
 
 #: validators.py:102
 #, fuzzy, python-format
 #| msgid "Must contain %(LOWER)s or more lowercase characters"
-msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgid "%(LOWER)s or more unique lowercase characters"
 msgstr "Debe contener %(LOWER)s o más caracteres en minúscula"
 
 #: validators.py:106
 #, fuzzy, python-format
 #| msgid "Must contain %(WORDS)s or more unique words"
-msgid "must contain %(LETTERS)s or more unique letters"
+msgid "%(LETTERS)s or more unique letters"
 msgstr "Debe contener %(WORDS)s o más palabras únicas"
 
 #: validators.py:110
 #, fuzzy, python-format
 #| msgid "Must contain %(DIGITS)s or more digits"
-msgid "must contain %(DIGITS)s or more unique digits"
+msgid "%(DIGITS)s or more unique digits"
 msgstr "Debe contener %(DIGITS)s o más dígitos"
 
 #: validators.py:114
 #, fuzzy, python-format
 #| msgid "Must contain %(PUNCTUATION)s or more punctuation character"
-msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgid "%(PUNCTUATION)s or more unique punctuation characters: %%s"
 msgstr "Debe contener %(PUNCTUATION)s o más signos de puntuación"
 
 #: validators.py:118
 #, fuzzy, python-format
 #| msgid "Must contain %(NON ASCII)s or more non ascii characters"
-msgid "must contain %(SPECIAL)s or more non unique special characters"
+msgid "%(SPECIAL)s or more non unique special characters"
 msgstr "Debe contener %(NON ASCII)s o más caracteres no ascii"
+
+#: validators.py:119
+msgid "must contain "
+msgstr " "
 
 #: validators.py:122
 #, fuzzy, python-format

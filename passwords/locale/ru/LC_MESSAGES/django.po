@@ -47,39 +47,43 @@ msgstr "Должен быть более сложным: %s"
 
 #: validators.py:98
 #, python-format
-msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgid "%(UPPER)s or more unique uppercase characters"
 msgstr "должен содержать %(UPPER)s или более уникальных прописных букв"
 
 #: validators.py:102
 #, python-format
-msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgid "%(LOWER)s or more unique lowercase characters"
 msgstr "должен содержать %(LOWER)s или более уникальных строчных букв"
 
 #: validators.py:106
 #, python-format
-msgid "must contain %(LETTERS)s or more unique letters"
+msgid "%(LETTERS)s or more unique letters"
 msgstr "должен содержать %(LETTERS)s или более уникальных букв"
 
 #: validators.py:110
 #, python-format
-msgid "must contain %(DIGITS)s or more unique digits"
+msgid "%(DIGITS)s or more unique digits"
 msgstr "должен содержать %(DIGITS)s или более уникальных цифр"
 
 #: validators.py:114
 #, python-format
-msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgid "%(PUNCTUATION)s or more unique punctuation characters: %%s"
 msgstr ""
 "должен содержать %(PUNCTUATION)s или более уникальных знаков пунктуации: %%s"
 
 #: validators.py:118
 #, python-format
-msgid "must contain %(SPECIAL)s or more non unique special characters"
+msgid "%(SPECIAL)s or more non unique special characters"
 msgstr "должен содержать %(SPECIAL)s или более уникальных специальных символов"
 
 #: validators.py:122
 #, python-format
-msgid "must contain %(WORDS)s or more unique words"
+msgid "%(WORDS)s or more unique words"
 msgstr "должен содержать %(WORDS)s или более уникальных слов"
+
+#: validators.py:119
+msgid "must contain "
+msgstr " "
 
 #: validators.py:132
 #, python-format

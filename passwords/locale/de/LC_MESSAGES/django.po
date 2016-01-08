@@ -45,38 +45,42 @@ msgstr "Höhere Komplexität erforderlich (%s)"
 
 #: validators.py:98
 #, python-format
-msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgid "%(UPPER)s or more unique uppercase characters"
 msgstr "Es müssen %(UPPER)s oder mehr verschiedene Großbuchstaben vorhanden sein"
 
 #: validators.py:102
 #, python-format
-msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgid "%(LOWER)s or more unique lowercase characters"
 msgstr "Es müssen %(LOWER)s oder mehr verschiedene Kleinbuchstaben vorhanden sein"
 
 #: validators.py:106
 #, python-format
-msgid "must contain %(LETTERS)s or more unique letters"
+msgid "%(LETTERS)s or more unique letters"
 msgstr "Es müssen %(LETTERS)s oder mehr verschiedene Buchstaben vorhanden sein"
 
 #: validators.py:110
 #, python-format
-msgid "must contain %(DIGITS)s or more unique digits"
+msgid "%(DIGITS)s or more unique digits"
 msgstr "Es müssen %(DIGITS)s oder mehr verschiedene Zahlen vorhanden sein"
 
 #: validators.py:114
 #, python-format
-msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgid "%(PUNCTUATION)s or more unique punctuation characters: %%s"
 msgstr "Es müssen %(PUNCTUATION)s oder mehr verschiedene Satzzeichen enthalten sein: %%s"
 
 #: validators.py:118
 #, python-format
-msgid "must contain %(SPECIAL)s or more non unique special characters"
+msgid "%(SPECIAL)s or more non unique special characters"
 msgstr "Es müssen %(SPECIAL)s oder mehr Sonderzeichen enthalten sein"
 
 #: validators.py:122
 #, python-format
-msgid "must contain %(WORDS)s or more unique words"
+msgid "%(WORDS)s or more unique words"
 msgstr "Es müssen %(WORDS)s oder mehr verschiedene Wörter enthalten sein"
+
+#: validators.py:119
+msgid "must contain "
+msgstr "erforderlich: "
 
 #: validators.py:132
 #, python-format

@@ -48,38 +48,42 @@ msgstr "Deve ser mais complexa (%s)"
 
 #: validators.py:98
 #, python-format
-msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgid "%(UPPER)s or more unique uppercase characters"
 msgstr "deve conter %(UPPER)s ou carácteres maiúsculos mais únicos"
 
 #: validators.py:102
 #, python-format
-msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgid "%(LOWER)s or more unique lowercase characters"
 msgstr "deve conter %(LOWER)s ou carácteres minúsculos mais únicos"
 
 #: validators.py:106
 #, python-format
-msgid "must contain %(LETTERS)s or more unique letters"
+msgid "%(LETTERS)s or more unique letters"
 msgstr "deve conter %(LETTERS)s ou letras mais únicas"
 
 #: validators.py:110
 #, python-format
-msgid "must contain %(DIGITS)s or more unique digits"
+msgid "%(DIGITS)s or more unique digits"
 msgstr "deve conter %(DIGITS)s ou dígitos mais únicos"
 
 #: validators.py:114
 #, python-format
-msgid "must contain %(PUNCTUATION)s or more unique punctuation characters"
+msgid "%(PUNCTUATION)s or more unique punctuation characters"
 msgstr "deve conter %(PUNCTUATION)s ou carácteres de pontuação mais únicos"
 
 #: validators.py:118
 #, python-format
-msgid "must contain %(SPECIAL)s or more unique special characters"
+msgid "%(SPECIAL)s or more unique special characters"
 msgstr "deve conter %(SPECIAL)s ou carácteres especiais mais únicos"
 
 #: validators.py:122
 #, python-format
-msgid "must contain %(WORDS)s or more unique words"
+msgid "%(WORDS)s or more unique words"
 msgstr "deve conter %(WORDS)s ou palavras mais únicas"
+
+#: validators.py:119
+msgid "must contain "
+msgstr " "
 
 #: validators.py:132
 #, python-format
