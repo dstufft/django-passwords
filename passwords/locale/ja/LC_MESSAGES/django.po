@@ -35,38 +35,42 @@ msgstr "複雑なパスワードをご入力ください (%s)"
 
 #: validators.py:98
 #, python-format
-msgid "must contain %(UPPER)s or more unique uppercase characters"
+msgid "%(UPPER)s or more unique uppercase characters"
 msgstr "%(UPPER)s文字以上の大文字をご入力ください"
 
 #: validators.py:102
 #, python-format
-msgid "must contain %(LOWER)s or more unique lowercase characters"
+msgid "%(LOWER)s or more unique lowercase characters"
 msgstr "%(LOWER)s文字以上の小文字をご入力ください"
 
 #: validators.py:106
 #, python-format
-msgid "must contain %(LETTERS)s or more unique letters"
+msgid "%(LETTERS)s or more unique letters"
 msgstr "%(LETTERS)s文字以上の大文字または小文字をご入力ください"
 
 #: validators.py:110
 #, python-format
-msgid "must contain %(DIGITS)s or more unique digits"
+msgid "%(DIGITS)s or more unique digits"
 msgstr "%(DIGITS)s文字以上の数字をご入力ください"
 
 #: validators.py:114
 #, python-format
-msgid "must contain %(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgid "%(PUNCTUATION)s or more unique punctuation characters: %%s"
 msgstr "%(PUNCTUATION)s文字以上の記号をご入力ください"
 
 #: validators.py:118
 #, python-format
-msgid "must contain %(SPECIAL)s or more non unique special characters"
+msgid "%(SPECIAL)s or more non unique special characters"
 msgstr "%(SPECIAL)s文字以上のスペースまたは記号をご入力ください"
 
 #: validators.py:122
 #, python-format
-msgid "must contain %(WORDS)s or more unique words"
+msgid "%(WORDS)s or more unique words"
 msgstr "%(WORDS)s語以上の単語をご入力ください"
+
+#: validators.py:119
+msgid "must contain "
+msgstr " "
 
 #: validators.py:132
 #, python-format
