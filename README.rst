@@ -111,5 +111,5 @@ configurations:
             UPPER=1,
             LOWER=1,
             DIGITS=1
-        })),
+        )),
     ])
