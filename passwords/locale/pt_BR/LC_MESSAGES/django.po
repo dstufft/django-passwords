@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-22 16:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: passwords/fields.py:27
+#, python-format
+msgid "%i to %i characters"
+msgstr "%i a %i caracteres"
+
+#: passwords/fields.py:31
+#, python-format
+msgid "%i characters minimum"
+msgstr "mínimo de %i caracteres"
+
+#: passwords/validators.py:46
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "Tamanho inválido (%s)"
+
+#: passwords/validators.py:56
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "Deve possuir %s ou mais caracteres"
+
+#: passwords/validators.py:58
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "Deve possuir %s ou menos caracteres"
+
+#: passwords/validators.py:65
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "Deve ser mais complexa (%s)"
+
+#: passwords/validators.py:95
+#, python-format
+msgid "%(UPPER)s or more unique uppercase characters"
+msgstr "%(UPPER)s ou mais caracteres maiúsculos não repetidos"
+
+#: passwords/validators.py:99
+#, python-format
+msgid "%(LOWER)s or more unique lowercase characters"
+msgstr "%(LOWER)s ou mais caracteres minúsculos não repetidos"
+
+#: passwords/validators.py:103
+#, python-format
+msgid "%(LETTERS)s or more unique letters"
+msgstr "%(LETTERS)s or mais letras não repetidas"
+
+#: passwords/validators.py:107
+#, python-format
+msgid "%(DIGITS)s or more unique digits"
+msgstr "%(DIGITS)s ou mais dígitos não repetidos"
+
+#: passwords/validators.py:111
+#, python-format
+msgid "%(SPECIAL)s or more non unique special characters"
+msgstr "%(SPECIAL)s ou mais caracteres especiais"
+
+#: passwords/validators.py:115
+#, python-format
+msgid "%(WORDS)s or more unique words"
+msgstr "%(WORDS)s ou mais palavras não repetidas"
+
+#: passwords/validators.py:119
+msgid "must contain "
+msgstr "deve conter "
+
+#: passwords/validators.py:124
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "Muito similar a [%(haystacks)s]"
+
+#: passwords/validators.py:168
+msgid "Based on a dictionary word"
+msgstr "Baseada em uma palavra do dicionário"
+
+#: passwords/validators.py:187
+msgid "Based on a common sequence of characters"
+msgstr "Baseada em uma sequência comum de caracteres"
