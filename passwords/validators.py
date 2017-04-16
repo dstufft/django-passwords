@@ -108,7 +108,7 @@ class ComplexityValidator(object):
                 self.complexities)
         if len(special) < self.complexities.get("SPECIAL", 0):
             errors.append(
-                _("%(SPECIAL)s or more non unique special characters") %
+                _("%(SPECIAL)s or more unique special characters") %
                 self.complexities)
         if len(words) < self.complexities.get("WORDS", 0):
             errors.append(
