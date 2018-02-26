@@ -41,27 +41,39 @@ Settings
 django-passwords adds 6 optional settings
 
 Optional:
-    Specifies minimum length for passwords::
+    Specifies minimum length for passwords:
+
+    .. code-block:: python
 
         PASSWORD_MIN_LENGTH = 6 # Defaults to 6
 
-    Specifies maximum length for passwords::
+    Specifies maximum length for passwords:
+
+    .. code-block:: python
 
         PASSWORD_MAX_LENGTH = 120 # Defaults to None
 
-    Specifies the location of a dictionary (file with one word per line)::
+    Specifies the location of a dictionary (file with one word per line):
+
+    .. code-block:: python
 
         PASSWORD_DICTIONARY = "/usr/share/dict/words" # Defaults to None
 
-    Specifies how close a fuzzy match has to be to be considered a match::
+    Specifies how close a fuzzy match has to be to be considered a match:
+
+    .. code-block:: python
 
         PASSWORD_MATCH_THRESHOLD = 0.9 # Defaults to 0.9, should be 0.0 - 1.0 where 1.0 means exactly the same.
 
-    Specifies a list of common sequences to attempt to match a password against::
+    Specifies a list of common sequences to attempt to match a password against:
+
+    .. code-block:: python
 
         PASSWORD_COMMON_SEQUENCES = [] # Should be a list of strings, see passwords/validators.py for default
 
-    Specifies number of characters within various sets that a password must contain::
+    Specifies number of characters within various sets that a password must contain:
+
+    .. code-block:: python
 
         PASSWORD_COMPLEXITY = { # You can omit any or all of these for no limit for that particular set
             "UPPER": 1,        # Uppercase
