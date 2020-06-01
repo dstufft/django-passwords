@@ -125,3 +125,17 @@ configurations:
             DIGITS=1
         )),
     ])
+
+
+Django's `password validation API`_ is slightly different than the form
+validation API and has wrappers in the `auth_password_validators` module:
+
+.. code-block:: python
+
+    AUTH_PASSWORD_VALIDATORS = [
+        …,
+        {"NAME": "passwords.auth_password_validators.ComplexityValidator"}
+    ]
+
+
+.. _`password validation API`: https://docs.djangoproject.com/en/2.1/topics/auth/passwords/#password-validation
