@@ -6,10 +6,7 @@ import re
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-try:
-    from django.utils.encoding import smart_text
-except ImportError:  # django < 1.4.2
-    from django.utils.encoding import smart_unicode as smart_text
+from django.utils.encoding import smart_str
 
 
 COMMON_SEQUENCES = [
@@ -191,10 +188,10 @@ class DictionaryValidator(BaseSimilarityValidator):
             f.close()
             if DICT_FILESIZE < 1000000:
                 with open(dictionary) as dictionary:
-                    DICT_CACHE = [smart_text(x.strip()) for x in dictionary.readlines()]
+                    DICT_CACHE = [smart_str(x.strip()) for x in dictionary.readlines()]
                     return DICT_CACHE
         with open(dictionary) as dictionary:
-            return [smart_text(x.strip()) for x in dictionary.readlines()]
+            return [smart_str(x.strip()) for x in dictionary.readlines()]
 
 
 class CommonSequenceValidator(BaseSimilarityValidator):
