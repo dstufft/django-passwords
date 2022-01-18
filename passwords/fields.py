@@ -1,5 +1,5 @@
 from django.forms import CharField, PasswordInput
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from passwords.validators import (validate_length, common_sequences,
                                   dictionary_words, complexity,

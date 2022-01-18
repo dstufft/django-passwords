@@ -5,7 +5,7 @@ import re
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 try:
     from django.utils.encoding import smart_text
 except ImportError:  # django < 1.4.2
