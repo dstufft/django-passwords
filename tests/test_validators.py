@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 from django.core.exceptions import ValidationError
 from passwords import validators
 from unittest import TestCase
-from six import assertRaisesRegex
 
 
 class TestLengthValidatorTests(TestCase):
@@ -69,7 +68,7 @@ class ValidatorTestCase(TestCase):
             with self.assertRaises(ValidationError):
                 validator(string)
         else:
-            with assertRaisesRegex(self, ValidationError, exc_re):
+            with self.assertRaisesRegex(ValidationError, exc_re):
                 validator(string)
 
 
