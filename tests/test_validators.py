@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.core.exceptions import ValidationError
 from passwords import validators
 from unittest import TestCase
-from six import assertRaisesRegex
+from tempfile import NamedTemporaryFile
 
 
 class TestLengthValidatorTests(TestCase):
@@ -69,7 +69,7 @@ class ValidatorTestCase(TestCase):
             with self.assertRaises(ValidationError):
                 validator(string)
         else:
-            with assertRaisesRegex(self, ValidationError, exc_re):
+            with self.assertRaisesRegex(ValidationError, exc_re):
                 validator(string)
 
 
@@ -224,11 +224,17 @@ class DictionaryValidator(ValidatorTestCase):
     same = 'words'
 
     def mkvalidator(self, words=None, dictionary_words=None, threshold=None):
+        dictionary = None
+        if dictionary_words:
+            dictionary_file = NamedTemporaryFile(mode='w')
+            dictionary_file.write(dictionary_words)
+            dictionary = dictionary_file.name
+
         instance = validators.DictionaryValidator(
             words=words,
-            threshold=threshold)
-        if dictionary_words:
-            instance.get_dictionary_words = lambda self, d: dictionary_words
+            threshold=threshold,
+            dictionary=dictionary
+        )
         return instance
 
     def test_provide_words_but_no_dictionary(self):

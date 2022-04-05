@@ -32,8 +32,8 @@ Or manually by downloading a tarball and typing::
 Compatibility
 -------------
 
-django-passwords is compatible with Django 1.3 through 1.9 RC1. Pythons 2.7
-and 3.4 are both supported.
+django-passwords is compatible with Django 2.2, 3.2, and 4.0. Pythons 3.7
+through 3.10 are supported.
 
 Settings
 --------
