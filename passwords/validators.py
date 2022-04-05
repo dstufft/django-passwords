@@ -23,9 +23,6 @@ COMMON_SEQUENCES = [
     "qwertzuiopü*asdfghjklöä'>yxcvbnm;:_",
     "qaywsxedcrfvtgbzhnujmikolp",
 ]
-DICT_CACHE = []
-DICT_FILESIZE = -1
-DICT_MAX_CACHE = 1000000
 
 # Settings
 PASSWORD_MIN_LENGTH = getattr(
@@ -179,17 +176,6 @@ class DictionaryValidator(BaseSimilarityValidator):
             threshold=threshold)
 
     def get_dictionary_words(self, dictionary):
-        if DICT_CACHE:
-            return DICT_CACHE
-        if DICT_FILESIZE is -1:
-            f = open(dictionary)
-            f.seek(0,2)
-            DICT_FILESIZE = f.tell()
-            f.close()
-            if DICT_FILESIZE < 1000000:
-                with open(dictionary) as dictionary:
-                    DICT_CACHE = [smart_str(x.strip()) for x in dictionary.readlines()]
-                    return DICT_CACHE
         with open(dictionary) as dictionary:
             return [smart_str(x.strip()) for x in dictionary.readlines()]
 
