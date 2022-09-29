@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: django-passwords\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-21 13:51+0200\n"
+"PO-Revision-Date: 2022-09-29 09:37+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Unknown\n"
+"Language: zxx\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: it_IT\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: fields.py:27
+#, python-format
+msgid "%i to %i characters"
+msgstr "%i a %i caratteri"
+
+#: fields.py:31
+#, python-format
+msgid "%i characters minimum"
+msgstr "minimo %i caratteri"
+
+#: validators.py:47
+#, python-format
+msgid "Invalid Length (%s)"
+msgstr "Lunghezza invalida (%s)"
+
+#: validators.py:57
+#, python-format
+msgid "Must be %s characters or more"
+msgstr "Dev'essere lunga almeno %s caratteri"
+
+#: validators.py:59
+#, python-format
+msgid "Must be %s characters or less"
+msgstr "Dev'essere lunga al massimo %s caratteri"
+
+#: validators.py:66
+#, python-format
+msgid "Must be more complex (%s)"
+msgstr "Dev'essere più complessa (%s)"
+
+#: validators.py:98
+#, python-format
+#| msgid "Must contain %(UPPER)s or more uppercase characters"
+msgid "%(UPPER)s or more unique uppercase characters"
+msgstr "Deve contenere %(UPPER)s o più lettere maiuscole"
+
+#: validators.py:102
+#, python-format
+#| msgid "Must contain %(LOWER)s or more lowercase characters"
+msgid "%(LOWER)s or more unique lowercase characters"
+msgstr "Deve contenere %(UPPER)s o più lettere minuscole"
+
+#: validators.py:106
+#, python-format
+#| msgid "Must contain %(WORDS)s or more unique words"
+msgid "%(LETTERS)s or more unique letters"
+msgstr "Deve contenere %(WORDS)s o più parole uniche"
+
+#: validators.py:110
+#, python-format
+#| msgid "Must contain %(DIGITS)s or more digits"
+msgid "%(DIGITS)s or more unique digits"
+msgstr "Deve contenere %(DIGITS)s o più numeri"
+
+#: validators.py:114
+#, python-format
+#| msgid "Must contain %(PUNCTUATION)s or more punctuation character"
+msgid "%(PUNCTUATION)s or more unique punctuation characters: %%s"
+msgstr "Deve contenere %(PUNCTUATION)s o più segni di punteggiatura"
+
+#: validators.py:118
+#, python-format
+#| msgid "Must contain %(NON ASCII)s or more non ascii characters"
+msgid "%(SPECIAL)s or more non unique special characters"
+msgstr "Deve contenere %(SPECIAL)s o più caratteri speciali"
+
+#: validators.py:119
+msgid "must contain "
+msgstr "deve contenere"
+
+#: validators.py:122
+#, python-format
+#| msgid "Must contain %(WORDS)s or more unique words"
+msgid "must contain %(WORDS)s or more unique words"
+msgstr "Deve contenere %(WORDS)s o più parole uniche"
+
+#: validators.py:132
+#, python-format
+msgid "Too Similar to [%(haystacks)s]"
+msgstr "Troppo simile a a [%(haystacks)s]"
+
+#: validators.py:176
+#| msgid "Based on a dictionary word."
+msgid "Based on a dictionary word"
+msgstr "Basato su un dizionario di parole"
+
+#: validators.py:195
+msgid "Based on a common sequence of characters"
+msgstr "Basato su una sequenza di caratteri comuni"
